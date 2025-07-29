@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scoreboard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: flex-start;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .score {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    .reset-btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .home-btn {
+      margin-top: auto;
+      margin-bottom: 20px;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .spacer {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scoreboard</h1>
+
+  <div class="score">Player X: <span id="scoreX">0</span></div>
+  <div class="score">Player O / AI: <span id="scoreO">0</span></div>
+
+  <button class="reset-btn" onclick="resetScore()">Reset Score</button>
+
+  <div class="spacer"></div> <!-- pushes the button to bottom -->
+
+  <button class="home-btn" onclick="location.href='index.html'">Go to Home Page</button>
+
+  <script>
+    function loadScores() {
+      document.getElementById('scoreX').textContent = localStorage.getItem('scoreX') || 0;
+      document.getElementById('scoreO').textContent = localStorage.getItem('scoreO') || 0;
+    }
+
+    function resetScore() {
+      localStorage.setItem('scoreX', 0);
+      localStorage.setItem('scoreO', 0);
+      loadScores();
+    }
+
+    loadScores();
+  </script>
+</body>
+</html>
+<script>
+  // Apply dark mode if saved
+  window.onload = function () {
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+    }
+  };
+</script>
+
+
