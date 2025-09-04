@@ -18,5 +18,11 @@ I utilized **AI-assisted coding tools** to speed up development and explore mode
 - **HTML** – structure and markup  
 - **CSS** – styling and responsiveness  
 - **JavaScript** – game logic and interactivity  
-- **AI Tools** – assisted in debugging and improving efficiency  
+- **AI Tools** – assisted in debugging and improving efficiency
+
+---
+
+## 🎮 Live Demo
+👉 [Play the game here](https://ruchit1806.github.io/tic-tac-toe/)
+
   
